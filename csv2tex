@@ -53,7 +53,7 @@ for (my $row = 0; my $line = <$in>; $row++) {
     if ($last2) {
         my $name = "$last2, $first2 \\& $last1, $first1";
         my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
-        $by_name{$last1}{$first1}{$row} = $s;
+        $by_name{$last2}{$first2}{$row} = $s;
     }
 
     my $s;
