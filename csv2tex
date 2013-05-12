@@ -44,7 +44,7 @@ for (my $row = 0; my $line = <$in>; $row++) {
         my $name = "$last1, $first1";
         if ($first2) {
             $name .= ' \&';
-            $name .= " $last2" if ($last2);
+            $name .= " $last2," if ($last2);
             $name .= " $first2";
         }
         my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
