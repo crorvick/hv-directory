@@ -47,4 +47,4 @@ directory.tex: directory.csv csv2tex
 	./csv2tex <$< >$@
 
 clean:
-	rm -f *.dvi *.log *.ps directory*.pdf
+	rm -f *.tex *.dvi *.log *.ps directory*.pdf
