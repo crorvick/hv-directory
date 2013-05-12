@@ -61,6 +61,7 @@ for (my $row = 0; my $line = <$in>; $row++) {
     ) = escape($csv->fields());
     ($last1, $first1) = name_escape($last1, $first1);
     ($last2, $first2) = name_escape($last2, $first2);
+    ($children) = name_escape($children);
     my $abbr_st = abbr_street($street);
     $phone = 'Unlisted' if (not $phone);
     if ($last1) {
