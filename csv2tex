@@ -206,7 +206,7 @@ for my $street (sort keys %by_addr) {
 \\nobreak\\smallskip
 \\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr
 TEX
-    for my $num (sort keys %{$h1}) {
+    for my $num (sort {$a <=> $b} keys %{$h1}) {
         print $out $h1->{$num} . "\\vskip.5pc\n";
     }
 }
