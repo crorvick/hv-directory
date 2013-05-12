@@ -1,0 +1,223 @@
+#!/usr/bin/env perl
+
+use POSIX qw(strftime);
+use Text::CSV;
+
+my $in = STDIN;
+my $out = STDOUT;
+
+sub abbr_street
+{
+    my ($street) = @_;
+    $street =~ s/Avenue$/Ave/g;
+    $street =~ s/Circle$/Cir/g;
+    $street =~ s/Court$/Ct/g;
+    $street =~ s/Drive$/Dr/g;
+    $street =~ s/Lane$/Ln/g;
+    $street =~ s/Road$/Rd/g;
+    $street =~ s/Street$/St/g;
+    $street =~ s/^East/E/g;
+    $street =~ s/^South/S/g;
+    return $street;
+}
+
+my (%by_name, %by_addr);
+
+my $csv = Text::CSV->new({ sep_char => ',' });
+for (my $row = 0; my $line = <$in>; $row++) {
+    next if ($row == 0);
+    chomp $line;
+    $csv->parse($line) or die;
+    my (
+        $house,
+        $street,
+        $last1,
+        $first1,
+        $last2,
+        $first2,
+        $phone,
+        $children
+    ) = $csv->fields();
+    my $abbr_st = abbr_street($street);
+    $phone = 'Unlisted' if (not $phone);
+    if ($last1) {
+        my $name = "$last1, $first1";
+        if ($first2) {
+            $name .= ' \&';
+            $name .= " $last2" if ($last2);
+            $name .= " $first2";
+        }
+        my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
+        $by_name{$last1}{$first1}{$row} = $s;
+    }
+    if ($last2) {
+        my $name = "$last2, $first2 \\& $last1, $first1";
+        my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
+        $by_name{$last1}{$first1}{$row} = $s;
+    }
+
+    my $s;
+    if ($last2) {
+        $s = "\\+\\hfill$house&&$first1 $last1 \\& $first2 $last2\\dotfill&$phone\\cr";
+    } elsif ($first2) {
+        $s = "\\+\\hfill$house&&$first1 \\& $first2 $last1\\dotfill&$phone\\cr";
+    } elsif ($last1) {
+        $s = "\\+\\hfill$house&&$first1 $last1\\dotfill&$phone\\cr";
+    } else {
+        $s = "\\+\\hfill$house&&Unlisted\\dotfill&$phone\\cr";
+    }
+    $s .= "\\nobreak\\+&&$children\\cr" if ($children);
+
+    my $street_key = $street;
+    $street_key =~ s/^East //;
+    $street_key =~ s/^South //;
+    $by_addr{"$street_key:$street"}{int($house)} = $s;
+}
+
+print $out <<'TEX';
+\special{papersize=5.5in,8.5in}
+
+\def\mymedskip{\vskip 1pc plus 3pt minus 3pt}
+\def\mybigskip{\vskip 2pc plus 6pt minus 6pt}
+
+\hoffset=-.5in
+\voffset=-.625in
+\hsize=4.5in
+\vsize=7.75in
+
+\font\phvrssm=phvr at 8pt
+\font\phvrsm=phvr at 8pt
+\font\ptmbsm=ptmb at 10pt
+\font\ptmbmd=ptmb at 14pt
+\font\ptmblg=ptmb at 18pt
+\phvrsm
+
+\footline={\ifnum\pageno=1 \hfil\else\phvrsm\hfil-- \folio\ --\hfil\fi}
+
+\centerline{\ptmblg H\ptmbmd OBSON \ptmblg V\ptmbmd ILLAGE \ptmblg D\ptmbmd IRECTORY}\mybigskip
+\noindent
+This directory is intended solely for the use of Hobson Village Residents.
+Any other use is unauthorized, except with the express permission of the
+Hobson Village Community Association. Please direct any comments or
+questions regarding the Hobson Village Community Association to:
+\mymedskip
+\hskip1inHobson Village Community Association\par
+\hskip1inP.O. Box 442\par
+\hskip1inNaperville, IL \ 60566\par
+\vfil
+TEX
+
+my @now = localtime;
+my $revised = strftime("%B %Y", @now);
+my $volume = ($now[5] - 85) / 2;  # assuming bi-annual publishing cycle
+my $volrm = '';
+
+while ($volume >= 100) { $volrm .= 'C'; $volume -= 100 }
+if ($volume >= 90) { $volrm .= 'XC'; $volume -= 90 }
+if ($volume >= 50) { $volrm .= 'L'; $volume -= 50 }
+if ($volume >= 40) { $volrm .= 'XL'; $volume -= 40 }
+while ($volume >= 10) { $volrm .= 'X'; $volume -= 10 }
+if ($volume >=  9) { $volrm .= 'IX'; $volume -=  9 }
+if ($volume >=  5) { $volrm .= 'V';  $volume -=  5 }
+if ($volume >=  4) { $volrm .= 'IV'; $volume -=  4 }
+while ($volume >=  1) { $volrm .= 'I'; $volume -=  1 }
+
+print $out <<TEX;
+\\hfill Volume $volrm\\par
+\\hfill Revised $revised\\par
+TEX
+
+print $out <<'TEX';
+\eject
+
+\vsize=7.5in
+\raggedbottom
+
+\centerline{\ptmblg P\ptmbmd HONE \ptmblg N\ptmbmd UMBERS}\smallskip
+TEX
+
+for (my $i = 0; $i < 28; ++$i) {
+    print $out "\\vskip1.5pc\\hrule\n";
+}
+print $out <<'TEX';
+\eject
+
+\centerline{\ptmblg R\ptmbmd ESIDENTS}
+
+\phvrssm
+
+\setbox100=\hbox{Blue Larkspur Ln---}
+\setbox101=\hbox{(630) 555-1234}
+\dimen100=4.5in
+\advance\dimen100 by -\wd100
+\advance\dimen100 by -\wd101
+TEX
+
+my $l = ' ';
+for my $last (sort keys %by_name) {
+    $h1 = $by_name{$last};
+    for my $first (sort keys %{$h1}) {
+        $h2 = $h1->{$first};
+        for my $row (sort keys %{$h2}) {
+            my $newl = substr($last, 0, 1);
+            if ($newl ne $l) {
+                $l = $newl;
+                print $out <<TEX;
+\\mybigskip
+\\centerline{\\ptmbsm-- $l --}\\nobreak
+\\smallskip
+\\settabs\\+\\hskip\\dimen100&\\hskip\\wd100&\\hskip\\wd101\\cr
+TEX
+            }
+            print $out $h2->{$row} . "\n";
+        }
+    }
+}
+
+print $out <<'TEX';
+\phvrsm
+\vfil\eject
+
+\def\myoutput{\ifnum\pageno=16\shipout\vbox{\vfil}\shipout\vbox{\vfil}\global\pageno=18\fi\shipout\vbox{\makeheadline\pagebody\makefootline}%
+  \advancepageno
+  \ifnum\outputpenalty>-2000 \else\dosupereject\fi
+}
+
+\output{\myoutput}
+
+\setbox100=\hbox{(630) 555-1234}'
+\dimen100=3.75in'
+\advance\dimen100 by -\wd100'
+TEX
+
+for my $street (sort keys %by_addr) {
+    $h1 = $by_addr{$street};
+    $street =~ s/[^:]*://;
+    my @parts;
+    for my $part (split(' ', $street)) {
+        my $P = substr($part, 0, 1);
+        my $art = substr($part, 1);
+        push @parts, "\\ptmbmd $P\\ptmbsm $art"
+    }
+    my $formatted_street = join(' ', @parts);
+    print $out <<TEX;
+\\mymedskip
+\\line{$formatted_street\\hfill}
+\\nobreak\\smallskip
+\\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr
+TEX
+    for my $num (sort keys %{$h1}) {
+        print $out $h1->{$num} . "\\vskip.5pc\n";
+    }
+}
+
+
+print $out <<'TEX';
+\eject
+
+\setbox\topins=\vbox{\vskip0pt}
+\output{\plainoutput}
+\centerline{\ptmblg N\ptmbmd OTES}
+
+\end
+TEX
