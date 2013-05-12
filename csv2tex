@@ -21,6 +21,17 @@ sub abbr_street
     return $street;
 }
 
+sub escape
+{
+    my @ret;
+    for my $field (@_) {
+        $field =~ s/\\/\\\\/g;
+        $field =~ s/&/\\&/g;
+        push @ret, $field
+    }
+    return @ret;
+}
+
 my (%by_name, %by_addr);
 
 my $csv = Text::CSV->new({ sep_char => ',' });
@@ -37,7 +48,7 @@ for (my $row = 0; my $line = <$in>; $row++) {
         $first2,
         $phone,
         $children
-    ) = $csv->fields();
+    ) = escape($csv->fields());
     my $abbr_st = abbr_street($street);
     $phone = 'Unlisted' if (not $phone);
     if ($last1) {
