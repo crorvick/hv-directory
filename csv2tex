@@ -37,6 +37,7 @@ sub name_escape
     my @ret;
     for my $field (@_) {
         $field =~ s/-/--/g;
+        $field =~ s/\xe2/'/g;
         push @ret, $field
     }
     return @ret;
