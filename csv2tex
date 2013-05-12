@@ -32,6 +32,16 @@ sub escape
     return @ret;
 }
 
+sub name_escape
+{
+    my @ret;
+    for my $field (@_) {
+        $field =~ s/-/--/g;
+        push @ret, $field
+    }
+    return @ret;
+}
+
 my (%by_name, %by_addr);
 
 my $csv = Text::CSV->new({ sep_char => ',' });
@@ -49,6 +59,8 @@ for (my $row = 0; my $line = <$in>; $row++) {
         $phone,
         $children
     ) = escape($csv->fields());
+    ($last1, $first1) = name_escape($last1, $first1);
+    ($last2, $first2) = name_escape($last2, $first2);
     my $abbr_st = abbr_street($street);
     $phone = 'Unlisted' if (not $phone);
     if ($last1) {
