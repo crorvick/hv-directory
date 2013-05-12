@@ -208,9 +208,9 @@ print $out <<'TEX';
 
 \output{\myoutput}
 
-\setbox100=\hbox{(630) 555-1234}'
-\dimen100=3.75in'
-\advance\dimen100 by -\wd100'
+\setbox100=\hbox{(630) 555-1234}
+\dimen100=3.75in
+\advance\dimen100 by -\wd100
 TEX
 
 for my $street (sort keys %by_addr) {
