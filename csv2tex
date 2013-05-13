@@ -1,0 +1,198 @@
+#!/bin/env python
+
+import sys, csv
+
+def escape(s):
+	for c in '\\&':
+		s = s.replace(c, '\\%s' % c)
+	return s
+
+def abbr_street(st):
+	st = st.replace('Avenue', 'Ave')
+	st = st.replace('Circle', 'Cir')
+	st = st.replace('Court',  'Ct')
+	st = st.replace('Drive',  'Dr')
+	st = st.replace('Lane',   'Ln')
+	st = st.replace('Road',   'Rd')
+	st = st.replace('Street', 'St')
+	st = st.replace('South',  'S')
+	return st
+
+print '\\special{papersize=5.5in,8.5in}'
+
+print '\\def\\mymedskip{\\vskip 1pc plus 3pt minus 3pt}'
+print '\\def\\mybigskip{\\vskip 2pc plus 6pt minus 6pt}'
+
+print '\\hoffset=-.5in'
+print '\\voffset=-.625in'
+print '\\hsize=4.5in'
+print '\\vsize=7.75in'
+
+print '\\font\\phvrssm=phvr at 8pt'
+print '\\font\\phvrsm=phvr at 8pt'
+print '\\font\\ptmbsm=ptmb at 10pt'
+print '\\font\\ptmbmd=ptmb at 14pt'
+print '\\font\\ptmblg=ptmb at 18pt'
+print '\\phvrsm'
+
+print '\\footline={\\ifnum\\pageno=1 \\hfil\\else\\phvrsm\hfil-- \\folio\ --\hfil\\fi}'
+
+print '\\centerline{\\ptmblg H\\ptmbmd OBSON \\ptmblg V\\ptmbmd ILLAGE \\ptmblg D\\ptmbmd IRECTORY}\\mybigskip'
+print '\\noindent'
+print 'This directory is intended solely for the use of Hobson Village'
+print 'Residents. Any other use is unauthorized, except with the express'
+print 'permission of the Hobson Village Community Association.'
+print 'Please direct any comments or questions regarding the Hobson Village'
+print 'Community Association to:'
+print '\\mymedskip'
+print '\\hskip1inHobson Village Community Association\par'
+print '\\hskip1inP.O. Box 442\par'
+print '\\hskip1inNaperville, IL \ 60566\par'
+print '\\vfil'
+print '\\hfill Volume XII\\par'
+print '\\hfill Revised September 2009\\par'
+print '\\eject'
+
+print '\\vsize=7.5in'
+print '\\raggedbottom'
+
+def print_lines(spacing, num):
+	for i in range(0, num):
+		print '\\vskip%s\\hrule' % spacing
+
+print '\\centerline{\\ptmblg P\\ptmbmd HONE \\ptmblg N\\ptmbmd UMBERS}\\smallskip'
+print_lines('1.5pc', 28)
+print '\\eject'
+
+reader = csv.DictReader(sys.stdin)
+
+by_name = {}
+by_addr = {}
+
+for i, line in enumerate(reader):
+	r = dict([ (k, escape(v)) for k, v in line.items() ])
+	for field in [ 'Last1', 'First1', 'Last2', 'First2' ]:
+		r[field] = r[field].replace('-','--')
+		r[field] = r[field].replace('\xe2','\'')
+
+	if not r['Phone']:
+		r['Phone'] = 'Unlisted'
+	r['AbbrSt'] = abbr_street(r['Street'])
+
+	if r['Last1']:
+		name = '%(Last1)s, %(First1)s' % r
+		if r['First2']:
+			name += ' \\&'
+			if r['Last2']:
+				name += ' %(Last2)s,' % r
+			name += ' %(First2)s' % r
+		r['Name'] = name
+		#s = '\\+%(Name)s\\dotfill%(House)s&&%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
+		s = '\\+%(Name)s\\dotfill%(House)s\\ &%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
+		by_name[(r['Last1'], r['First1'], i)] = s
+
+	if r['Last2']:
+		name = '%(Last2)s, %(First2)s \\& %(Last1)s, %(First1)s' % r
+		r['Name'] = name
+		#s = '\\+%(Name)s\\dotfill%(House)s&&%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
+		s = '\\+%(Name)s\\dotfill%(House)s\\ &%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
+		by_name[(r['Last2'], r['First2'], i)] = s
+
+	if r['Last2']:
+		s = '\\+\\hfill%(House)s&&%(First1)s %(Last1)s \& %(First2)s %(Last2)s\\dotfill&%(Phone)s\\cr' % r
+	elif r['First2']:
+		s = '\\+\\hfill%(House)s&&%(First1)s \& %(First2)s %(Last1)s\\dotfill&%(Phone)s\\cr' % r
+	elif r['Last1']:
+		s = '\\+\\hfill%(House)s&&%(First1)s %(Last1)s\\dotfill&%(Phone)s\\cr' % r
+	else:
+		s = '\\+\\hfill%(House)s&&Unlisted\\dotfill&%(Phone)s\\cr' % r
+	if r['Children']:
+		s += '\\nobreak\\+&&%(Children)s\\cr' % r
+
+	num = int(line['House'])
+	full_street = line['Street']
+	if full_street.startswith('East '):
+		street = full_street[5:]
+	elif full_street.startswith('South '):
+		street = full_street[6:]
+	else:
+		street = full_street
+	key = (street, full_street)
+	if not by_addr.has_key(key):
+		by_addr[key] = {}
+	by_addr[key][num] = s
+
+print '\\centerline{\\ptmblg R\\ptmbmd ESIDENTS}'
+
+print '\\phvrssm'
+
+print '\\setbox100=\\hbox{Blue Larkspur Ln---}'
+print '\\setbox101=\\hbox{(630) 555-1234}'
+print '\\dimen100=4.5in'
+print '\\advance\\dimen100 by -\\wd100'
+print '\\advance\\dimen100 by -\\wd101'
+
+l = ' '
+keys = by_name.keys()
+keys.sort()
+for key in keys:
+	line = by_name[key]
+	newl = line[2]
+	if newl != l:
+		l = newl
+		print '\\mybigskip'
+		print '\\centerline{\ptmbsm-- %s --}\\nobreak' % l
+		print '\\smallskip'
+		#print '\\settabs\\+\\hskip2.75in&\\ &\\hskip1in&\\cr'
+		print '\\settabs\\+\\hskip\\dimen100&\\hskip\\wd100&\\hskip\\wd101\\cr'
+	print line
+print '\\phvrsm'
+
+print '\\vfil\\eject'
+
+#print '\\newbox\\streetcont'
+
+print '''
+\\def\\myoutput{\\ifnum\\pageno=16\\shipout\\vbox{\\vfil}\\shipout\\vbox{\\vfil}\\global\\pageno=18\\fi\\shipout\\vbox{\\makeheadline\\pagebody\\makefootline}%
+  \\advancepageno
+  \\ifnum\\outputpenalty>-2000 \\else\\dosupereject\\fi
+}
+'''
+#  \\ifvoid\\streetcont \\else\\global\\setbox\\topins=\\copy\\streetcont\\fi
+
+print '\\output{\\myoutput}'
+
+def print_street(name):
+	parts = name.upper().split()
+	tmp = '\\line{'
+	for part in parts:
+		tmp += '\\ptmbmd %s\\ptmbsm %s ' % (part[0], part[1:])
+	tmp2 = tmp + '(CONTINUED)\\hfill}'
+	tmp += '\n\\hfill}'
+	print tmp
+	#print '\\setbox\\streetcont=\\vbox{\\line{' + tmp2 + '}\\smallskip}'
+
+print '\\setbox100=\\hbox{(630) 555-1234}'
+print '\\dimen100=3.75in'
+print '\\advance\\dimen100 by -\\wd100'
+
+streets = by_addr.keys()
+streets.sort()
+for street in streets:
+	print '\\mymedskip'
+	print_street(street[1])
+	print '\\nobreak\\smallskip'
+	print '\\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr'
+	nums = by_addr[street].keys()
+	nums.sort()
+	for num in nums:
+		print by_addr[street][num]
+		print '\\vskip.5pc'
+
+print '\\eject'
+
+print '\\setbox\\topins=\\vbox{\\vskip0pt}'
+print '\\output{\\plainoutput}'
+print '\\centerline{\\ptmblg N\\ptmbmd OTES}'
+
+print '\\end'
