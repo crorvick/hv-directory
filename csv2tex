@@ -1,198 +1,248 @@
-#!/bin/env python
+#!/usr/bin/env perl
 
-import sys, csv
+use POSIX qw(strftime);
+use Text::CSV;
 
-def escape(s):
-	for c in '\\&':
-		s = s.replace(c, '\\%s' % c)
-	return s
+my $in = STDIN;
+my $out = STDOUT;
 
-def abbr_street(st):
-	st = st.replace('Avenue', 'Ave')
-	st = st.replace('Circle', 'Cir')
-	st = st.replace('Court',  'Ct')
-	st = st.replace('Drive',  'Dr')
-	st = st.replace('Lane',   'Ln')
-	st = st.replace('Road',   'Rd')
-	st = st.replace('Street', 'St')
-	st = st.replace('South',  'S')
-	return st
-
-print '\\special{papersize=5.5in,8.5in}'
-
-print '\\def\\mymedskip{\\vskip 1pc plus 3pt minus 3pt}'
-print '\\def\\mybigskip{\\vskip 2pc plus 6pt minus 6pt}'
-
-print '\\hoffset=-.5in'
-print '\\voffset=-.625in'
-print '\\hsize=4.5in'
-print '\\vsize=7.75in'
-
-print '\\font\\phvrssm=phvr at 8pt'
-print '\\font\\phvrsm=phvr at 8pt'
-print '\\font\\ptmbsm=ptmb at 10pt'
-print '\\font\\ptmbmd=ptmb at 14pt'
-print '\\font\\ptmblg=ptmb at 18pt'
-print '\\phvrsm'
-
-print '\\footline={\\ifnum\\pageno=1 \\hfil\\else\\phvrsm\hfil-- \\folio\ --\hfil\\fi}'
-
-print '\\centerline{\\ptmblg H\\ptmbmd OBSON \\ptmblg V\\ptmbmd ILLAGE \\ptmblg D\\ptmbmd IRECTORY}\\mybigskip'
-print '\\noindent'
-print 'This directory is intended solely for the use of Hobson Village'
-print 'Residents. Any other use is unauthorized, except with the express'
-print 'permission of the Hobson Village Community Association.'
-print 'Please direct any comments or questions regarding the Hobson Village'
-print 'Community Association to:'
-print '\\mymedskip'
-print '\\hskip1inHobson Village Community Association\par'
-print '\\hskip1inP.O. Box 442\par'
-print '\\hskip1inNaperville, IL \ 60566\par'
-print '\\vfil'
-print '\\hfill Volume XIII\\par'
-print '\\hfill Revised October 2011\\par'
-print '\\eject'
-
-print '\\vsize=7.5in'
-print '\\raggedbottom'
-
-def print_lines(spacing, num):
-	for i in range(0, num):
-		print '\\vskip%s\\hrule' % spacing
-
-print '\\centerline{\\ptmblg P\\ptmbmd HONE \\ptmblg N\\ptmbmd UMBERS}\\smallskip'
-print_lines('1.5pc', 28)
-print '\\eject'
-
-reader = csv.DictReader(sys.stdin)
-
-by_name = {}
-by_addr = {}
-
-for i, line in enumerate(reader):
-	r = dict([ (k, escape(v)) for k, v in line.items() ])
-	for field in [ 'Last1', 'First1', 'Last2', 'First2' ]:
-		r[field] = r[field].replace('-','--')
-		r[field] = r[field].replace('\xe2','\'')
-
-	if not r['Phone']:
-		r['Phone'] = 'Unlisted'
-	r['AbbrSt'] = abbr_street(r['Street'])
-
-	if r['Last1']:
-		name = '%(Last1)s, %(First1)s' % r
-		if r['First2']:
-			name += ' \\&'
-			if r['Last2']:
-				name += ' %(Last2)s,' % r
-			name += ' %(First2)s' % r
-		r['Name'] = name
-		#s = '\\+%(Name)s\\dotfill%(House)s&&%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
-		s = '\\+%(Name)s\\dotfill%(House)s\\ &%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
-		by_name[(r['Last1'], r['First1'], i)] = s
-
-	if r['Last2']:
-		name = '%(Last2)s, %(First2)s \\& %(Last1)s, %(First1)s' % r
-		r['Name'] = name
-		#s = '\\+%(Name)s\\dotfill%(House)s&&%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
-		s = '\\+%(Name)s\\dotfill%(House)s\\ &%(AbbrSt)s\\dotfill&%(Phone)s\\cr' % r
-		by_name[(r['Last2'], r['First2'], i)] = s
-
-	if r['Last2']:
-		s = '\\+\\hfill%(House)s&&%(First1)s %(Last1)s \& %(First2)s %(Last2)s\\dotfill&%(Phone)s\\cr' % r
-	elif r['First2']:
-		s = '\\+\\hfill%(House)s&&%(First1)s \& %(First2)s %(Last1)s\\dotfill&%(Phone)s\\cr' % r
-	elif r['Last1']:
-		s = '\\+\\hfill%(House)s&&%(First1)s %(Last1)s\\dotfill&%(Phone)s\\cr' % r
-	else:
-		s = '\\+\\hfill%(House)s&&Unlisted\\dotfill&%(Phone)s\\cr' % r
-	if r['Children']:
-		s += '\\nobreak\\+&&%(Children)s\\cr' % r
-
-	num = int(line['House'])
-	full_street = line['Street']
-	if full_street.startswith('East '):
-		street = full_street[5:]
-	elif full_street.startswith('South '):
-		street = full_street[6:]
-	else:
-		street = full_street
-	key = (street, full_street)
-	if not by_addr.has_key(key):
-		by_addr[key] = {}
-	by_addr[key][num] = s
-
-print '\\centerline{\\ptmblg R\\ptmbmd ESIDENTS}'
-
-print '\\phvrssm'
-
-print '\\setbox100=\\hbox{Blue Larkspur Ln---}'
-print '\\setbox101=\\hbox{(630) 555-1234}'
-print '\\dimen100=4.5in'
-print '\\advance\\dimen100 by -\\wd100'
-print '\\advance\\dimen100 by -\\wd101'
-
-l = ' '
-keys = by_name.keys()
-keys.sort()
-for key in keys:
-	line = by_name[key]
-	newl = line[2]
-	if newl != l:
-		l = newl
-		print '\\mybigskip'
-		print '\\centerline{\ptmbsm-- %s --}\\nobreak' % l
-		print '\\smallskip'
-		#print '\\settabs\\+\\hskip2.75in&\\ &\\hskip1in&\\cr'
-		print '\\settabs\\+\\hskip\\dimen100&\\hskip\\wd100&\\hskip\\wd101\\cr'
-	print line
-print '\\phvrsm'
-
-print '\\vfil\\eject'
-
-#print '\\newbox\\streetcont'
-
-print '''
-\\def\\myoutput{\\ifnum\\pageno=16\\shipout\\vbox{\\vfil}\\shipout\\vbox{\\vfil}\\global\\pageno=18\\fi\\shipout\\vbox{\\makeheadline\\pagebody\\makefootline}%
-  \\advancepageno
-  \\ifnum\\outputpenalty>-2000 \\else\\dosupereject\\fi
+sub abbr_street
+{
+    my ($street) = @_;
+    $street =~ s/Avenue$/Ave/g;
+    $street =~ s/Circle$/Cir/g;
+    $street =~ s/Court$/Ct/g;
+    $street =~ s/Drive$/Dr/g;
+    $street =~ s/Lane$/Ln/g;
+    $street =~ s/Road$/Rd/g;
+    $street =~ s/Street$/St/g;
+    $street =~ s/^East/E/g;
+    $street =~ s/^South/S/g;
+    return $street;
 }
-'''
-#  \\ifvoid\\streetcont \\else\\global\\setbox\\topins=\\copy\\streetcont\\fi
 
-print '\\output{\\myoutput}'
+sub escape
+{
+    my @ret;
+    for my $field (@_) {
+        $field =~ s/\\/\\\\/g;
+        $field =~ s/&/\\&/g;
+        push @ret, $field
+    }
+    return @ret;
+}
 
-def print_street(name):
-	parts = name.upper().split()
-	tmp = '\\line{'
-	for part in parts:
-		tmp += '\\ptmbmd %s\\ptmbsm %s ' % (part[0], part[1:])
-	tmp2 = tmp + '(CONTINUED)\\hfill}'
-	tmp += '\n\\hfill}'
-	print tmp
-	#print '\\setbox\\streetcont=\\vbox{\\line{' + tmp2 + '}\\smallskip}'
+sub name_escape
+{
+    my @ret;
+    for my $field (@_) {
+        $field =~ s/-/--/g;
+        $field =~ s/\xe2/'/g;
+        push @ret, $field
+    }
+    return @ret;
+}
 
-print '\\setbox100=\\hbox{(630) 555-1234}'
-print '\\dimen100=3.75in'
-print '\\advance\\dimen100 by -\\wd100'
+my (%by_name, %by_addr);
 
-streets = by_addr.keys()
-streets.sort()
-for street in streets:
-	print '\\mymedskip'
-	print_street(street[1])
-	print '\\nobreak\\smallskip'
-	print '\\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr'
-	nums = by_addr[street].keys()
-	nums.sort()
-	for num in nums:
-		print by_addr[street][num]
-		print '\\vskip.5pc'
+my $csv = Text::CSV->new({ sep_char => ',' });
+for (my $row = 0; my $line = <$in>; $row++) {
+    next if ($row == 0);
+    chomp $line;
+    $csv->parse($line) or die;
+    my (
+        $house,
+        $street,
+        $last1,
+        $first1,
+        $last2,
+        $first2,
+        $phone,
+        $children
+    ) = escape($csv->fields());
+    ($last1, $first1) = name_escape($last1, $first1);
+    ($last2, $first2) = name_escape($last2, $first2);
+    ($children) = name_escape($children);
+    my $abbr_st = abbr_street($street);
+    $phone = 'Unlisted' if (not $phone);
+    if ($last1) {
+        my $name = "$last1, $first1";
+        if ($first2) {
+            $name .= ' \&';
+            $name .= " $last2," if ($last2);
+            $name .= " $first2";
+        }
+        my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
+        $by_name{$last1}{$first1}{$row} = $s;
+    }
+    if ($last2) {
+        my $name = "$last2, $first2 \\& $last1, $first1";
+        my $s = "\\+$name\\dotfill$house\\ &$abbr_st\\dotfill&$phone\\cr";
+        $by_name{$last2}{$first2}{$row} = $s;
+    }
 
-print '\\eject'
+    my $s;
+    if ($last2) {
+        $s = "\\+\\hfill$house&&$first1 $last1 \\& $first2 $last2\\dotfill&$phone\\cr";
+    } elsif ($first2) {
+        $s = "\\+\\hfill$house&&$first1 \\& $first2 $last1\\dotfill&$phone\\cr";
+    } elsif ($last1) {
+        $s = "\\+\\hfill$house&&$first1 $last1\\dotfill&$phone\\cr";
+    } else {
+        $s = "\\+\\hfill$house&&Unlisted\\dotfill&$phone\\cr";
+    }
+    $s .= "\\nobreak\\+&&$children\\cr" if ($children);
 
-print '\\setbox\\topins=\\vbox{\\vskip0pt}'
-print '\\output{\\plainoutput}'
-print '\\centerline{\\ptmblg N\\ptmbmd OTES}'
+    my $street_key = $street;
+    $street_key =~ s/^East //;
+    $street_key =~ s/^South //;
+    $by_addr{"$street_key:$street"}{int($house)} = $s;
+}
 
-print '\\end'
+print $out <<'TEX';
+\special{papersize=5.5in,8.5in}
+
+\def\mymedskip{\vskip 1pc plus 3pt minus 3pt}
+\def\mybigskip{\vskip 2pc plus 6pt minus 6pt}
+
+\hoffset=-.5in
+\voffset=-.625in
+\hsize=4.5in
+\vsize=7.75in
+
+\font\phvrssm=phvr at 8pt
+\font\phvrsm=phvr at 8pt
+\font\ptmbsm=ptmb at 10pt
+\font\ptmbmd=ptmb at 14pt
+\font\ptmblg=ptmb at 18pt
+\phvrsm
+
+\footline={\ifnum\pageno=1 \hfil\else\phvrsm\hfil-- \folio\ --\hfil\fi}
+
+\centerline{\ptmblg H\ptmbmd OBSON \ptmblg V\ptmbmd ILLAGE \ptmblg D\ptmbmd IRECTORY}\mybigskip
+\noindent
+This directory is intended solely for the use of Hobson Village Residents.
+Any other use is unauthorized, except with the express permission of the
+Hobson Village Community Association. Please direct any comments or
+questions regarding the Hobson Village Community Association to:
+\mymedskip
+\hskip1inHobson Village Community Association\par
+\hskip1inP.O. Box 442\par
+\hskip1inNaperville, IL \ 60566\par
+\vfil
+TEX
+
+my @now = localtime;
+my $revised = strftime("%B %Y", @now);
+my $volume = ($now[5] - 85) / 2;  # assuming bi-annual publishing cycle
+my $volrm = '';
+
+while ($volume >= 100) { $volrm .= 'C'; $volume -= 100 }
+if ($volume >= 90) { $volrm .= 'XC'; $volume -= 90 }
+if ($volume >= 50) { $volrm .= 'L'; $volume -= 50 }
+if ($volume >= 40) { $volrm .= 'XL'; $volume -= 40 }
+while ($volume >= 10) { $volrm .= 'X'; $volume -= 10 }
+if ($volume >=  9) { $volrm .= 'IX'; $volume -=  9 }
+if ($volume >=  5) { $volrm .= 'V';  $volume -=  5 }
+if ($volume >=  4) { $volrm .= 'IV'; $volume -=  4 }
+while ($volume >=  1) { $volrm .= 'I'; $volume -=  1 }
+
+print $out <<TEX;
+\\hfill Volume $volrm\\par
+\\hfill Revised $revised\\par
+TEX
+
+print $out <<'TEX';
+\eject
+
+\vsize=7.5in
+\raggedbottom
+
+\centerline{\ptmblg P\ptmbmd HONE \ptmblg N\ptmbmd UMBERS}\smallskip
+TEX
+
+for (my $i = 0; $i < 28; ++$i) {
+    print $out "\\vskip1.5pc\\hrule\n";
+}
+print $out <<'TEX';
+\eject
+
+\centerline{\ptmblg R\ptmbmd ESIDENTS}
+
+\phvrssm
+
+\setbox100=\hbox{Blue Larkspur Ln---}
+\setbox101=\hbox{(630) 555-1234}
+\dimen100=4.5in
+\advance\dimen100 by -\wd100
+\advance\dimen100 by -\wd101
+TEX
+
+my $l = ' ';
+for my $last (sort keys %by_name) {
+    $h1 = $by_name{$last};
+    for my $first (sort keys %{$h1}) {
+        $h2 = $h1->{$first};
+        for my $row (sort keys %{$h2}) {
+            my $newl = substr($last, 0, 1);
+            if ($newl ne $l) {
+                $l = $newl;
+                print $out <<TEX;
+\\mybigskip
+\\centerline{\\ptmbsm-- $l --}\\nobreak
+\\smallskip
+\\settabs\\+\\hskip\\dimen100&\\hskip\\wd100&\\hskip\\wd101\\cr
+TEX
+            }
+            print $out $h2->{$row} . "\n";
+        }
+    }
+}
+
+print $out <<'TEX';
+\phvrsm
+\vfil\eject
+
+\def\myoutput{\ifnum\pageno=16\shipout\vbox{\vfil}\shipout\vbox{\vfil}\global\pageno=18\fi\shipout\vbox{\makeheadline\pagebody\makefootline}%
+  \advancepageno
+  \ifnum\outputpenalty>-2000 \else\dosupereject\fi
+}
+
+\output{\myoutput}
+
+\setbox100=\hbox{(630) 555-1234}
+\dimen100=3.75in
+\advance\dimen100 by -\wd100
+TEX
+
+for my $street (sort keys %by_addr) {
+    $h1 = $by_addr{$street};
+    $street =~ s/[^:]*://;
+    my @parts;
+    for my $part (split(' ', $street)) {
+        my $P = substr($part, 0, 1);
+        my $art = uc(substr($part, 1));
+        push @parts, "\\ptmbmd $P\\ptmbsm $art"
+    }
+    my $formatted_street = join(' ', @parts);
+    print $out <<TEX;
+\\mymedskip
+\\line{$formatted_street\\hfill}
+\\nobreak\\smallskip
+\\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr
+TEX
+    for my $num (sort {$a <=> $b} keys %{$h1}) {
+        print $out $h1->{$num} . "\\vskip.5pc\n";
+    }
+}
+
+
+print $out <<'TEX';
+\eject
+
+\setbox\topins=\vbox{\vskip0pt}
+\output{\plainoutput}
+\centerline{\ptmblg N\ptmbmd OTES}
+
+\end
+TEX
