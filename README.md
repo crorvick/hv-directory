@@ -7,7 +7,7 @@ a CSV data file.  Two files are generated:
    This is file is for review only.
 
  * `directory_for_printer.pdf` - Output formatted for the printer.
-   Pages are paired up by how they should be adjusted and inside margins
+   Pages are paired up by how they should be printed and inside margins
    are adjusted to account for the fold.
 
 # Format
