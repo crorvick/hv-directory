@@ -220,8 +220,7 @@ for my $street (sort keys %by_addr) {
     $street =~ s/[^:]*://;
     my @parts;
     for my $part (split(' ', $street)) {
-        my $P = substr($part, 0, 1);
-        my $art = uc(substr($part, 1));
+        my ($P, $art) = split(//, uc $part, 2);
         push @parts, "\\ptmbmd $P\\ptmbsm $art"
     }
     my $formatted_street = join(' ', @parts);
