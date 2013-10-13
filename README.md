@@ -31,7 +31,7 @@ The input CSV data file should have the following format:
    * East Gartner Road
    * Iron Liege Court
    * Jaipur Avenue
-   * Kaui King Court
+   * Kauai King Court
    * Needles Court
    * Omaha Court
    * Riva Ridge Court
