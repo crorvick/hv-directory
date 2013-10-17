@@ -1,0 +1,56 @@
+--- directory-orig.tex	2013-10-16 23:21:42.032484257 -0500
++++ directory.tex	2013-10-16 23:21:42.043484403 -0500
+@@ -158,7 +158,7 @@
+ \+Crawford, Gregory \& Carmen\dotfill1119\ &Faireno Ct\dotfill&Unlisted\cr
+ \+Cunningham, Steven \& Maryann\dotfill930\ &Tim Tam Cir\dotfill&(630) 854-1400\cr
+ \+Cutter, Bill \& Mary\dotfill1090\ &Whirlaway Ave\dotfill&(630) 961-2152\cr
+-\mybigskip
++\break
+ \centerline{\ptmbsm-- D --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -191,7 +191,7 @@
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+ \+Fahy, Bill \& Bridget\dotfill825\ &Jaipur Ave\dotfill&(630) 536-8144\cr
+ \+Fales, Peter \& Lorenz, Diana\dotfill1085\ &Whirlaway Ave\dotfill&(630) 357-4769\cr
+-\+Farnaus--Rothermel, Adrienne--Rae \& Rothermel, Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Farnaus--Rothermel, Adrienne--Rae \& Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Farrell, John \& Pat\dotfill1123\ &Whirlaway Ave\dotfill&(630) 420-7042\cr
+ \+Farrington, Bob \& Ann\dotfill1085\ &E Gartner Rd\dotfill&(630) 355-2382\cr
+ \+Faruqi, Salman \& Khalid, Sara\dotfill1223\ &Iron Liege Ct\dotfill&(847) 510-5916\cr
+@@ -302,7 +302,7 @@
+ \+Luperini, Perry \& Susan\dotfill1135\ &Whirlaway Ave\dotfill&(630) 983-8846\cr
+ \+Lusk, Dudley \& Barb\dotfill1066\ &E Gartner Rd\dotfill&(630) 961-2379\cr
+ \+Lynch, Kevin \& Sharry\dotfill1063\ &E Gartner Rd\dotfill&(630) 983-7681\cr
+-\mybigskip
++\medskip
+ \centerline{\ptmbsm-- M --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -391,7 +391,7 @@
+ \+Ronan, Jim \& Marie\dotfill809\ &S Charles Ave\dotfill&(630) 664-4116\cr
+ \+Rorvick, Christopher \& Michelle\dotfill921\ &Canonero Dr\dotfill&(630) 416-0382\cr
+ \+Rose, Mark \& Nicole\dotfill1130\ &Blue Larkspur Ln\dotfill&Unlisted\cr
+-\+Rothermel, Scott \& Farnaus--Rothermel, Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Rothermel, Scott \& Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Russell, Jim \& Kelly\dotfill823\ &S Charles Ave\dotfill&(630) 718-1003\cr
+ \+Ryan, Jack \& Sandy\dotfill1204\ &Needles Ct\dotfill&(630) 362-4000\cr
+ \+Ryan, Philip \& Janet\dotfill1135\ &Blue Larkspur Ln\dotfill&(630) 961-0395\cr
+@@ -438,7 +438,7 @@
+ \+Sula, Norman \& Sylvia\dotfill912\ &Secretariat Dr\dotfill&(630) 983-7221\cr
+ \+Sundin, Dave \& Vicki\dotfill1110\ &E Gartner Rd\dotfill&(630) 637-1313\cr
+ \+Swedlund, Jon \& Kris\dotfill1074\ &Whirlaway Ave\dotfill&(630) 983-1455\cr
+-\mybigskip
++\break
+ \centerline{\ptmbsm-- T --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -471,7 +471,7 @@
+ \+Vinik, Michael \& Leah\dotfill804\ &Riva Ridge Ct\dotfill&(630) 961-9582\cr
+ \+Volk, John \& Kim\dotfill1005\ &Sir Barton Ct\dotfill&(630) 416-1519\cr
+ \+Voyda, Gary \& Karen\dotfill1209\ &Chateaugay Ave\dotfill&(630) 369-8423\cr
+-\mybigskip
++\break
+ \centerline{\ptmbsm-- W --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
