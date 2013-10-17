@@ -206,6 +206,7 @@ print $out <<'TEX';
 \def\myoutput{\ifnum\pageno=16\shipout\vbox{\vfil}\shipout\vbox{\vfil}\global\pageno=18\fi\shipout\vbox{\makeheadline\pagebody\makefootline}%
   \advancepageno
   \ifnum\outputpenalty>-2000 \else\dosupereject\fi
+  \botmark
 }
 
 \output{\myoutput}
@@ -228,6 +229,7 @@ for my $street (sort keys %by_addr) {
 \\mymedskip
 \\line{$formatted_street\\hfill}
 \\nobreak\\smallskip
+\\mark{\\vbox{\\hbox{$formatted_street (CONTINUED)\\hfill}}}
 \\settabs\\+\\hskip.5in&\\hskip.25in&\\hskip\\dimen100&\\hskip\\wd100\\cr
 TEX
     for my $num (sort {$a <=> $b} keys %{$h1}) {
@@ -237,6 +239,7 @@ TEX
 
 
 print $out <<'TEX';
+\mark{}
 \eject
 
 \setbox\topins=\vbox{\vskip0pt}
