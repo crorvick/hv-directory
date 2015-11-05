@@ -226,6 +226,7 @@ for my $street (sort keys %by_addr) {
     }
     my $formatted_street = join(' ', @parts);
     print $out <<TEX;
+\\mark{}
 \\mymedskip
 \\line{$formatted_street\\hfill}
 \\nobreak\\smallskip
