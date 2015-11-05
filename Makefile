@@ -46,7 +46,10 @@ directory_for_printer.dvi: directory.dvi
 
 directory.tex: directory.csv csv2tex
 	./csv2tex <$< >$@
-	test -f $*.diff && (cp -p $@ $*-orig.tex; patch $@ $*.diff)
+	if [ -f $*.patch ]; then \
+		cp -p $@ $*-orig.tex; \
+		patch $@ $*.patch; \
+	fi
 
 clean:
 	rm -f *.tex *.dvi *.log *.ps directory*.pdf
