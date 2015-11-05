@@ -17,9 +17,10 @@ directory-no-blanks.dvi: directory.dvi
 	dvidvi -i 1..15 -i 18..32 $< $@
 
 directory_for_printer.pdf: directory_for_printer.ps
-	ps2pdf $< tmp.pdf
-	pdftk A=tmp.pdf B=map.pdf cat A1-15 B1E output $@
-	rm tmp.pdf
+	ps2pdf $< directory_for_printer_content.pdf
+	pdf270 map.pdf
+	pdfunite directory_for_printer_content.pdf map-rotated270.pdf $@
+	rm directory_for_printer_content.pdf map-rotated270.pdf
 
 directory_for_printer.ps: directory_for_printer.dvi
 	dvips -T11in,8.5in $<
