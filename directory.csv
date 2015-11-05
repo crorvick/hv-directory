@@ -3,7 +3,7 @@
 1125,"Blue Larkspur Lane","DelGaudio","Jim",,"Ellen","(630) 428-4216","Dustin Teves '85"
 1130,"Blue Larkspur Lane","Rose","Mark",,"Nicole",,"Madeline"
 1134,"Blue Larkspur Lane","O'Connor","Robert",,"Maria","(630) 961-5835",
-1135,"Blue Larkspur Lane","Ryan","Philip",,"Janet","(630) 961-0395",
+1135,"Blue Larkspur Lane","Ryan","Philip",,,"(630) 961-0395",
 1138,"Blue Larkspur Lane","Spizzirri","Pete",,"Betsy","(630) 983-8706","Tiffany '83, Danielle '93, Amanda '95, Joseph '01"
 1142,"Blue Larkspur Lane","Rzonca","Edward",,"Angeline","(630) 961-1142","Tony '60, Ray '64"
 1143,"Blue Larkspur Lane","Fealko","Jeffrey","Keller","Susanne","(630) 428-2573",
@@ -13,7 +13,7 @@
 1154,"Blue Larkspur Lane","Hendrickson","Mark",,"Kathy","(630) 357-5249","Joe '91, Patrick '95, Michael '98"
 809,"Canonero Drive","Hoye","Kyle",,"Gail","(630) 718-1976",
 813,"Canonero Drive","Amos","Rodney",,"Donna","(630) 983-1229","Brandon '86, Erik '88"
-900,"Canonero Drive","Eskew","Tom",,"Kim","(630) 470-9751","Lola '11"
+900,"Canonero Drive","Eskew","Tom",,"Kim","(630) 470-9751","Lola '11, Leonard '15"
 904,"Canonero Drive","Everett","Elliott",,,"(630) 961-3430",
 908,"Canonero Drive","Barnicle","Marty",,"Tess","(630) 420-7271","Brigid '71, Patrick '73"
 909,"Canonero Drive","Hammond","Colin",,"Gosia","(630) 420-8342",
@@ -68,8 +68,8 @@
 911,"South Charles Avenue","Sachdev","Ameet",,"Lisa","(630) 219-4393","Alex '06"
 914,"South Charles Avenue","Wujciga","John",,"Diane","(630) 416-1789",
 915,"South Charles Avenue","Slater","Michael","Grills","Colleen","(630) 548-1925","Sarah '99, Grace '02, Thomas '05"
-918,"South Charles Avenue","Grevlos","Thomas",,"Jeanne","(630) 548-9714","Tommy '88"
-919,"South Charles Avenue","Lathrope","Mike",,"Margie","(630) 369-1469",
+918,"South Charles Avenue","Lackowski","Matt",,"Regina","(630) 484-7776","Avery '15"
+919,"South Charles Avenue","DeKoster","Scott",,"Leslie","(312) 515-8713","Grace '13"
 922,"South Charles Avenue","Flood","Jay",,"Susan","(630) 420-8117","Jacqueline Jae '02"
 923,"South Charles Avenue","Byers","Charlie",,,"(630) 357-6379","Becca '80, Jenny '82"
 927,"South Charles Avenue","Jakubiak","Ray",,"Wrenne","(630) 420-2346","Jenny '81"
@@ -90,7 +90,7 @@
 717,"Chateaugay Avenue","Bremner","Mike",,"Monica","(630) 536-8709","Luke '05, Anna '06, Molly '08, Clare '10"
 720,"Chateaugay Avenue","Fitch","Kevin",,"Lisa","(630) 548-4622","Ashley '95, Ryan '96"
 724,"Chateaugay Avenue","Pollitt","John",,"Vanessa","(630) 357-7921","Jacob '00, Alysson '04"
-728,"Chateaugay Avenue",,,,,,
+728,"Chateaugay Avenue","Anderson","Dennis",,"Nicole","(630) 839-9688","Svannah '11, Graham '12, Evelyn '14"
 729,"Chateaugay Avenue","Makowski","James","Leahy-Makowski","Noirin","(630) 305-9005",
 732,"Chateaugay Avenue","Michel","Mark","Stickley Michel","Anne","(630) 983-6743","Phillip '91, Elena '93"
 733,"Chateaugay Avenue","Buchanan","Craig",,"Zoe","(630) 305-8327","Angus '92, Fiona '96"
@@ -162,7 +162,7 @@
 1105,"East Gartner Road","Tammaru","Enn",,"Lemmi","(630) 420-8343",
 1106,"East Gartner Road","Ramsbottom","Don",,"Helen","(630) 420-9153",
 1109,"East Gartner Road","Bernstein","Jonathan",,"Lori Jan","(630) 357-6455",
-1110,"East Gartner Road","Sundin","Dave",,"Vicki","(630) 637-1313","Jon '75, Chris '83"
+1110,"East Gartner Road","Doyle","Sean",,"Colleen","(708)431-0398","Declan '12, Brendan '14"
 1113,"East Gartner Road","Thornley","Peter",,"Shelia","(630) 420-2519",
 1114,"East Gartner Road","Dahlstrom","John",,"Justin","(630) 548-3000","Sammy '90"
 1117,"East Gartner Road","Yabumoto","Kan W.",,"Noriko","(630) 369-3577","Koji Thomas '82, Yuji Eric '84, Maya Amadea '86"
@@ -224,7 +224,7 @@
 903,"Secretariat Drive","Davis","Mark",,"Janet","(630) 355-5470","Paige '03, Jason '05"
 907,"Secretariat Drive","Dickins","Graham",,"Maralee","(630) 983-5120","Garett '85, Kirsten '87"
 908,"Secretariat Drive","Taylor","Robert",,"Valerie","(630) 416-0986",
-911,"Secretariat Drive","Causemaker","Jason",,"Sarah","(630) 803-2582","Andrew '11"
+911,"Secretariat Drive","Causemaker","Jason",,"Sarah","(630) 803-2582","Andrew '11, Jillian '14"
 912,"Secretariat Drive","Sula","Norman",,"Sylvia","(630) 983-7221",
 915,"Secretariat Drive","John","Robert",,"Gerda","(630) 369-3507",
 916,"Secretariat Drive","Gasteyer","Ted",,"Diane","(630) 961-0597","Emily '92, Nathaniel '96"
