@@ -4,7 +4,7 @@ Generate a directory for Hobson Village (Naperville, IL) residents from
 a CSV data file.  Two files are generated:
 
  * `directory.pdf` - Pages are formatted indivually and ordered by page.
-   This is file is for review only.
+   This file is for review only.
 
  * `directory_for_printer.pdf` - Output formatted for the printer.
    Pages are paired up by how they should be printed and inside margins
