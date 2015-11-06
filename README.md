@@ -10,6 +10,14 @@ a CSV data file.  Two files are generated:
    Pages are paired up by how they should be printed and inside margins
    are adjusted to account for the fold.
 
+# Requirements
+
+A modern Linux distribution including:
+
+ * Perl
+ * Tex Live
+ * Ghostscript
+
 # Format
 
 The input CSV data file should have the following format:
