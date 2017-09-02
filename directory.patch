@@ -1,0 +1,49 @@
+diff --git a/directory.tex b/directory.tex
+index 38f154e..1375e1c 100644
+--- a/directory.tex
++++ b/directory.tex
+@@ -181,7 +181,7 @@ questions regarding the Hobson Village Community Association to:
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+ \+Fales, Peter \& Lorenz, Diana\dotfill1085\ &Whirlaway Ave\dotfill&(630) 357-4769\cr
+-\+Farnaus--Rothermel, Adrienne--Rae \& Rothermel, Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Farnaus--Rothermel, Adrienne--Rae \& Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Farrell, John \& Pat\dotfill1123\ &Whirlaway Ave\dotfill&(630) 420-7042\cr
+ \+Farrington, Bob \& Ann\dotfill1085\ &E Gartner Rd\dotfill&(630) 355-2382\cr
+ \+Fealko, Jeffrey \& Keller, Susanne\dotfill1143\ &Blue Larkspur Ln\dotfill&(630) 428-2573\cr
+@@ -306,7 +306,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Mollo, Ray \& Pat\dotfill906\ &Jaipur Ave\dotfill&(630) 527-8134\cr
+ \+Morrow, Jamie \& Vicki\dotfill1221\ &Chateaugay Ave\dotfill&(630) 369-5557\cr
+ \+Muklewicz, Ron \& Jane\dotfill819\ &S Charles Ave\dotfill&(630) 983-9589\cr
+-\mybigskip
++\break
+ \centerline{\ptmbsm-- N --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -363,7 +363,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Rorvick, Christopher \& Michelle\dotfill921\ &Canonero Dr\dotfill&(630) 416-0382\cr
+ \+Rosas, Monica \& Williams, Douglas\dotfill1224\ &Iron Liege Ct\dotfill&(630) 886-7306\cr
+ \+Rose, Mark \& Nicole\dotfill1130\ &Blue Larkspur Ln\dotfill&Unlisted\cr
+-\+Rothermel, Scott \& Farnaus--Rothermel, Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Rothermel, Scott \& Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Russell, Jim \& Kelly\dotfill823\ &S Charles Ave\dotfill&(630) 718-1003\cr
+ \+Ryan, Jack \& Sandy\dotfill1204\ &Needles Ct\dotfill&(630) 362-4000\cr
+ \+Ryan, Philip\dotfill1135\ &Blue Larkspur Ln\dotfill&(630) 961-0395\cr
+@@ -446,7 +446,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Vinik, Michael \& Leah\dotfill804\ &Riva Ridge Ct\dotfill&(630) 961-9582\cr
+ \+Volk, John \& Kim\dotfill1005\ &Sir Barton Ct\dotfill&(630) 416-1519\cr
+ \+Voyda, Gary \& Karen\dotfill1209\ &Chateaugay Ave\dotfill&(630) 369-8423\cr
+-\mybigskip
++\break
+ \centerline{\ptmbsm-- W --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -895,7 +895,7 @@ questions regarding the Hobson Village Community Association to:
+ \+\hfill1144&&Harry \& Lucille Holzmacher\dotfill&(630) 717-0080\cr\vskip.5pc
+ \+\hfill1145&&Dave \& Sharon Larson\dotfill&(630) 983-0052\cr\nobreak\+&&Brian '85, Pamela '88, Greg '93\cr\vskip.5pc
+ \mark{}
+-\mymedskip
++\break
+ \line{\ptmbmd W\ptmbsm HIRLAWAY \ptmbmd A\ptmbsm VENUE\hfill}
+ \nobreak\smallskip
+ \mark{\vbox{\hbox{\ptmbmd W\ptmbsm HIRLAWAY \ptmbmd A\ptmbsm VENUE (CONTINUED)\hfill}}}
