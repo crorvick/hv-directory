@@ -1,5 +1,5 @@
 "House","Street","Last1","First1","Last2","First2","Phone","Children"
-1124,"Blue Larkspur Lane",,,,,,
+1124,"Blue Larkspur Lane","Beaver","Regan",,"Kristin","(630) 946-6082","Rachel '12, Jack '14, Jay '16"
 1125,"Blue Larkspur Lane",,,,,,
 1130,"Blue Larkspur Lane","Rose","Mark",,"Nicole",,"Madeline"
 1134,"Blue Larkspur Lane","O'Connor","Robert",,"Maria","(630) 961-5835",
@@ -11,7 +11,7 @@
 1147,"Blue Larkspur Lane","Amato","Ron",,"Amy","(630) 778-0841","Alex '08"
 1150,"Blue Larkspur Lane","Spencer","Phil",,"Pam","(630) 717-9711",
 1154,"Blue Larkspur Lane","Hendrickson","Mark",,"Kathy","(630) 357-5249","Joe '91, Patrick '95, Michael '98"
-809,"Canonero Drive","Hoye","Kyle",,"Gail","(630) 718-1976",
+809,"Canonero Drive",,,,,,
 813,"Canonero Drive","Amos","Rodney",,"Donna","(630) 983-1229","Brandon '86, Erik '88"
 900,"Canonero Drive","Eskew","Tom",,"Kim","(630) 470-9751","Lola '11, Leonard '15"
 904,"Canonero Drive","Everett","Elliott",,,"(630) 961-3430",
@@ -36,7 +36,7 @@
 1077,"Challdon Court","Halleck","David","Hohe","Theresa","(630) 527-9767","Stephen Halleck '92"
 1078,"Challdon Court","Sims","Larry",,"Dorothy","(630) 420-1916",
 1081,"Challdon Court","Hurwith","Brad","Golden","Elisa","(630) 428-2147","Drew '03, Colin '06"
-1082,"Challdon Court","Zheng","Ning","Zu","Mindi",,
+1082,"Challdon Court","Zheng","Ning","Xu","Mindi",,
 1086,"Challdon Court","Wu","Y. Grace",,,"(630) 983-0792","Michael '84, Karen '86, Cindy '89"
 605,"South Charles Avenue","Nordstrom","Mary",,,,
 608,"South Charles Avenue","Simel","Jim",,"Penny","(630) 420-1224","Erica '74, Audra '79"
@@ -76,15 +76,15 @@
 1002,"South Charles Avenue","Trezona","Richard",,"Jennifer","(630) 717-0233","Allison '95, Victoria '96"
 1003,"South Charles Avenue",,,,,,
 1012,"South Charles Avenue","Martin","Matthew",,"Debbie","(630) 983-1120","Michael, Christopher, John"
-1103,"South Charles Avenue","Thompson","Gary",,"Christine","(630) 428-7647","George '97, Ellie '00"
+1103,"South Charles Avenue","Thompson","Gary",,"Christine","(630) 853-2370","George '97, Ellie '00"
 1106,"South Charles Avenue","Paul","Jim",,"Nora","(630) 420-1106",
 1109,"South Charles Avenue",,,,,,
 1110,"South Charles Avenue","Cox","David",,"Kathleen","(630) 420-8693","Laura '75"
-1113,"South Charles Avenue","Fife","Roger","Gerba","Judy","(630) 369-0578",
+1113,"South Charles Avenue",,,,,,
 1114,"South Charles Avenue","Lewis","Frank",,"Foruzan","(630) 416-7276","Sahar '90, Ava '94"
 1117,"South Charles Avenue","Gorksi","Brian",,"Lisa","(630) 983-3829","Christopher '88, Lauryn '92"
 1118,"South Charles Avenue","Miller","James",,"Jennifer","(630) 305-3881","Caitlin '96, Aline '99, Meghan '02"
-1122,"South Charles Avenue","Regan","John",,"Deana","(630) 305-0461","John '01, Ryan '02, Joey '07"
+1122,"South Charles Avenue",,,,,,
 712,"Chateaugay Avenue","LaScala","Paul",,"Kerry","(630) 420-7386","Jon '89, Ben '91, Tim '94, Sam '96, Chris '98, Peter '02"
 716,"Chateaugay Avenue","Kottis","Nick",,"Linda","(630) 369-4328","Lauren '89, Christine '90"
 717,"Chateaugay Avenue","Mercier","Timothy",,,,
@@ -98,7 +98,7 @@
 805,"Chateaugay Avenue",,,,,,
 1131,"Chateaugay Avenue","Perich","Michael",,"Theresa","(630) 983-6486","Ashley '85, Michael '87"
 1132,"Chateaugay Avenue","Tomoiaga","Daniel",,"Marina","(773) 814-1351","Alex '10"
-1135,"Chateaugay Avenue","Campbell","Thomas",,"Arlene","(630) 717-0710","Carmela '05"
+1135,"Chateaugay Avenue",,,,,,
 1136,"Chateaugay Avenue","Drogosz","Donald",,"Liz","(630) 848-0230",
 1139,"Chateaugay Avenue","Domek","Joseph",,"Kristine","(630) 983-0486",
 1143,"Chateaugay Avenue","Hacker","Ronald",,"Vicki","(630) 420-7241",
@@ -114,13 +114,13 @@
 1217,"Chateaugay Avenue","Becker","Steve",,"Colleen","(630) 548-4847",
 1218,"Chateaugay Avenue","Hattas","Mark",,"Liz","(630) 369-1322","John '98, Charlie '00, David '02, Henry '05, Sophie '09"
 1221,"Chateaugay Avenue","Morrow","Jamie",,"Vicki","(630) 369-5557","Brandon '99, Ryan '04"
-1225,"Chateaugay Avenue","Perfitt","Timothy","Clarkin","Catherine","(630) 839-9167","James '04"
+1225,"Chateaugay Avenue","Marnauzs","Ainars",,"Iveta","(331) 401-4888","Sven '97, Martin '02, Markus '11"
 1229,"Chateaugay Avenue","Maloney","Miles",,"Tracy","(630) 527-0021","Grace '87, Nolan '94"
 704,"Citation Avenue","Santangelo","Charles",,"Grace","(630) 961-0521",
 709,"Citation Avenue","Luebbert","Marvin",,"Nell","(630) 420-7499",
 716,"Citation Avenue","Cornett","Jerry",,"Judy","(630) 983-1851",
-720,"Citation Avenue","Wojciechowski","Edward",,,,
-724,"Citation Avenue","Eun","Edwin",,"Dhohee",,
+720,"Citation Avenue",,,,,,
+724,"Citation Avenue",,,,,,
 725,"Citation Avenue","Zavondy","Stephen",,"Mary Pat","(630) 369-7894","Katie '85, Kevin '88, Colleen '90, Kerry '90"
 728,"Citation Avenue","Camasto","Jim",,"Kath","(630) 357-6987",
 731,"Citation Avenue","Davis","Harlan",,"Susan","(630) 420-1076",
@@ -131,7 +131,7 @@
 609,"Count Fleet Court","Martinson","Alex",,"Katie","(847) 989-9847","Abbie '05, Isabel '07, Emelia '09, Olivia '11, Claire '13"
 610,"Count Fleet Court","Carroll","Pete",,"Lynn","(630) 579-9816","Amanda '94, Megan '96"
 1108,"Dark Star Road","McGovern","Mike",,"Nance","(630) 717-8411","Christopher '80, Maggie '82, Patrick '85"
-1109,"Dark Star Road","McFadden","Rob",,"Carrie","(630) 420-9342","Sydney '00, Joe '03, Danny '04"
+1109,"Dark Star Road",,,,,,
 1112,"Dark Star Road","Albanese","Lee",,"Michele","(630) 416-7160","Lindsey '89, Michael '91"
 1113,"Dark Star Road","Thayer","Tom",,"Geri","(630) 420-2340","Katie '79, Kevin '84, Becky '86, Mollie '89, Casey '90, Amy '93"
 1116,"Dark Star Road","O'Reilly","Dan","Weiss-O'Reilly","Nancy","(630) 983-1022","Ryan '82, Erin '83"
@@ -142,11 +142,11 @@
 1115,"Faireno Court","Gopal","Gurram","Rajan","Shyamala","(630) 778-8627",
 1116,"Faireno Court","Joy","Harry",,"Sheryl","(630) 416-0563",
 1119,"Faireno Court","Crawford","Gregory",,"Carmen",,"Charles '90, Ryan '93"
-1123,"Faireno Court","Hutton","Darrell",,"Rita","(630) 961-0526",
+1123,"Faireno Court",,,,,,
 1050,"East Gartner Road","Campbell","Eilah",,,"(630) 983-1594","Sareena, Matthew"
-1055,"East Gartner Road","Wardell","Ray",,,"(630) 220-3419","Lauren '87, James '88, Alexondra '91, Luke '93"
+1055,"East Gartner Road",,,,,,
 1058,"East Gartner Road","Riedl","Edwin",,"Dorothy","(630) 637-9078",
-1059,"East Gartner Road","Hutter","Richard",,"Norma","(630) 369-1859",
+1059,"East Gartner Road",,,,,,
 1062,"East Gartner Road","Spathelf","Stephen",,"Susan","(630) 369-6390","Jonathan '92, Jennifer '94"
 1063,"East Gartner Road","Lynch","Kevin",,"Sharry","(630) 983-7681","Connor '92, Michael '94, Austin '98"
 1066,"East Gartner Road","Lusk","Dudley",,"Barb","(630) 961-2379",
@@ -163,8 +163,8 @@
 1106,"East Gartner Road","Ramsbottom","Don",,"Helen","(630) 420-9153",
 1109,"East Gartner Road","Bernstein","Jonathan",,"Lori Jan","(630) 357-6455",
 1110,"East Gartner Road","Doyle","Sean",,"Colleen","(708)431-0398","Declan '12, Brendan '14, Aidan '17"
-1113,"East Gartner Road","Arellano","S. Runge",,"Kimberly",,"Ayden, Caleb"
-1114,"East Gartner Road","Suveg","Antal",,"Margaret (Peg)",,
+1113,"East Gartner Road","Arellano","Alfredo",,"Kimberly",,"Ayden, Caleb"
+1114,"East Gartner Road","Suveg","Tony",,"Peg",,
 1117,"East Gartner Road","Yabumoto","Kan W.",,"Noriko","(630) 369-3577","Koji Thomas '82, Yuji Eric '84, Maya Amadea '86"
 1118,"East Gartner Road","Ebert","Bruce",,"Alice","(630) 369-3027",
 1122,"East Gartner Road","Richter","Kevin",,"Alison","(630) 983-6298","Michael '87, Katie '94"
@@ -172,15 +172,15 @@
 1126,"East Gartner Road","Surma","Scott",,"Erin","(630) 730-4971","Damon '10, Clara '15, Ginny '15"
 1214,"Iron Liege Court","Miller","Byron",,"Marlene","(630) 416-1222",
 1220,"Iron Liege Court","Jadron","Scott",,"Gulcin","(630) 470-9538","Ada '09, Leyna '11"
-1223,"Iron Liege Court","Faruqi","Salman","Khalid","Sara","(847) 510-5916","Maryam '04, Zaynab '09"
+1223,"Iron Liege Court",,,,,,
 1224,"Iron Liege Court","Williams","Douglas","Rosas","Monica","(630) 886-7306","Dimitri '99, Izel '07, Kai '09, Maximus '04"
 1227,"Iron Liege Court","Burkhardt","David",,"Barbara","(630) 717-8322","Anne '91, Daniel '93, Mary Claire '98"
-1228,"Iron Liege Court","Myszkowski","Ken",,"Kathryn","(630) 420-6204","Max '98, Karina '00, Nicholas '01, Natalie '03"
+1228,"Iron Liege Court",,,,,,
 816,"Jaipur Avenue","Warner","Bob",,"Meg","(630) 369-9496","Deirdre '86, Mary Peg '88, Teddy '91, Carly '93"
-820,"Jaipur Avenue","Van de Wille","Patrick","Carbon","Katherine","(630) 369-5541","Julie '95, Max '98"
+820,"Jaipur Avenue",,,,,,
 821,"Jaipur Avenue","Gill","Ray",,"Bansi","(630) 420-1617","Kelly '71, Pam '76"
 824,"Jaipur Avenue","Neckrosh","Alan",,"Gail","(630) 369-2427","Ashley '88, Brian '88"
-825,"Jaipur Avenue","Sliwa","Dave",,"Katie","(630) 660-0522","Nora '13, Maya '14"
+825,"Jaipur Avenue","Sliwa","Dave",,"Katherine","(630) 660-0522","Nora '13, Maya '14"
 906,"Jaipur Avenue","Mollo","Ray",,"Pat","(630) 527-8134","Matt '73, Ryan Fee '79, Scott Fee '80, Justin Fee '82, Patrick '94"
 912,"Jaipur Avenue","Johnson","Rick",,"Carla","(630) 961-0924",
 916,"Jaipur Avenue","Jurek","Rich",,"Marsha","(630) 548-0810","Stephanie '86, Kamin '89, Angela '96, Joshua '99"
@@ -189,10 +189,10 @@
 921,"Jaipur Avenue","Green","Tom",,"Sally","(630) 305-0926","Benjamin '90, Jonathan '93"
 924,"Jaipur Avenue","Stricker","Bob",,"Marian","(630) 961-0327","Jon '92, Mikel '94"
 928,"Jaipur Avenue","Tierney","David",,"Donna","(630) 961-2769",
-1007,"Kauai King Court","Stuckey","Susan",,"Jeff","(630) 416-1147",
+1007,"Kauai King Court","Stuckey","Jeff",,,"(630) 416-1147",
 1011,"Kauai King Court",,,,,,
-1014,"Kauai King Court","Willis","Haynes",,"DeLores","(630) 961-1855",
-1016,"Kauai King Court","Clark","Jeffrey",,"Cassie","(630) 778-8566","Zach '92, Connor '98, Charlie '07"
+1014,"Kauai King Court",,,,,,
+1016,"Kauai King Court",,,,,,
 1020,"Kauai King Court","Angstadt","Robert","Marino","Marlene","(630) 420-8612",
 1204,"Needles Court","Ryan","Jack",,"Sandy","(630) 362-4000","Jenna '85, Erin '88"
 1207,"Needles Court","Nam","Kim",,"Chul","(630) 428-4840","Kiwon '94, Kireem '97"
@@ -200,7 +200,7 @@
 1211,"Needles Court","Squires","Bruce",,"Mayling","(630) 357-0235","Marissa '05, Jason '08"
 1212,"Needles Court","Marwah","Ajay",,"Andrea","(630) 357-6434","Samantha '01, Julia '03, Andrew '06"
 1215,"Needles Court","Combs","Robert",,"Krystin","(630) 416-7453","Robie '88, Kara '92, Kayla '94"
-1216,"Needles Court","Ohlson","Richard",,"The Rev. Elizabeth","(630) 983-4021",
+1216,"Needles Court",,,,,,
 1220,"Needles Court","Casamassimo","Len",,"Corene","(630) 579-8913",
 1125,"Omaha Court","Rewerts","Denis",,"Heide",,"Audrie '79, Abbie '78"
 1126,"Omaha Court","Riemer","Joel",,"Carolyn","(630) 445-5245","Logan '03, Ashley '05, Chloe '08"
@@ -224,7 +224,7 @@
 903,"Secretariat Drive","Davis","Mark",,"Janet","(630) 355-5470","Paige '03, Jason '05"
 907,"Secretariat Drive","Dickins","Graham",,"Maralee","(630) 983-5120","Garett '85, Kirsten '87"
 908,"Secretariat Drive","Taylor","Robert",,"Valerie","(630) 416-0986",
-911,"Secretariat Drive","Stahlecker","Karen",,,,
+911,"Secretariat Drive","Stahlecker","Karen",,,"(630) 202-6756",
 912,"Secretariat Drive","Sula","Norman",,"Sylvia","(630) 983-7221",
 915,"Secretariat Drive","John","Robert",,"Gerda","(630) 369-3507",
 916,"Secretariat Drive","Gasteyer","Ted",,"Diane","(630) 961-0597","Emily '92, Nathaniel '96"
@@ -244,36 +244,36 @@
 919,"Tim Tam Circle","Ostergaard","Jack",,"Jane","(630) 357-9697","Tyler '84, Emily '86, Sam '89"
 923,"Tim Tam Circle","Crago","Kenneth",,"Rosemary","(630) 420-0133",
 927,"Tim Tam Circle","Williams","Richard",,"Laura","(630) 579-6838","Joe '92, David & Katie '95"
-930,"Tim Tam Circle","Cunningham","Steven",,"Maryann","(630) 854-1400","Chandler '95, John '97, Lizzie '98, Shawn Cherry '99, Matthew Cherry '01"
+930,"Tim Tam Circle",,,,,,
 931,"Tim Tam Circle","Hwu","Nain",,"Eleanor","(630) 416-6496","Joyce '85, Kristin '90"
 934,"Tim Tam Circle","Berjohn","Harold",,"Mary Kay","(309) 648-9253",
 935,"Tim Tam Circle","Vargo","Daniel","Mark","Judith","(630) 420-0302",
 938,"Tim Tam Circle","Golminas","Ron",,"Sandy","(630) 753-9648","Jack '01, Matt '04"
 939,"Tim Tam Circle","Filicicchia","Sam",,"Pat","(630) 357-9496","Rose Anne '81, Angela '85, Sam '89"
 942,"Tim Tam Circle","Biggs","Collin",,"Kelly","(630) 470-9578","Harper '12, Crew '16"
-943,"Tim Tam Circle","Radgowski","John",,"Sandee","(630) 983-0443",
+943,"Tim Tam Circle",,,,,,
 947,"Tim Tam Circle","Haerr","Louis",,"Carol","(630) 420-7321",
 950,"Tim Tam Circle",,,,,,
 951,"Tim Tam Circle","Beck","Bill",,"Carol","(630) 420-2291",
 955,"Tim Tam Circle","Sarris","Paul",,"Bridget","(630) 420-8551",
 959,"Tim Tam Circle","Bromagen","Tim",,"Ellen","(630) 428-9076","Emily '95, Jack '99"
 961,"Tim Tam Circle","Stein","Joe",,"Andrea","(630) 961-9873","Robert '97, Sarah '98"
-1124,"Venetian Court","Knapik","Edward",,"Dolores","(630) 416-3478",
+1124,"Venetian Court",,,,,,
 1128,"Venetian Court","O'Loughlin","Brendan",,"Monica","(630) 983-2958","Erin '91, Megan '93"
 1129,"Venetian Court","Mallard","Geoff",,,"(630) 805-0901","Jacob '96, Austin '99 & Luke '03"
-1132,"Venetian Court","Huang","C.P.",,"Nancy",,
+1132,"Venetian Court","Huang","Chung",,"Lan",,
 1133,"Venetian Court","Schauer","Raymond Jr.",,"Cynthia","(630) 579-4459","Anton '11, Vinny '13, Christina '17"
 1136,"Venetian Court","Wepking","Randy",,"Kiki","(630) 416-2156","William '01"
 1137,"Venetian Court","Harper","Dan",,"Julie","(630) 428-1413","Danny '90, Kathleen '92, Sarah '98"
 1140,"Venetian Court","May","Allen","Thompson","Linda","(630) 548-2629","Aaron '96"
-1141,"Venetian Court","McKenna","Michael",,"Marcia","(630) 961-2077","Mitchell '81, Tamara '84, Brittany '87"
+1141,"Venetian Court",,,,,,
 1144,"Venetian Court","Holzmacher","Harry",,"Lucille","(630) 717-0080",
 1145,"Venetian Court","Larson","Dave",,"Sharon","(630) 983-0052","Brian '85, Pamela '88, Greg '93"
 1002,"Whirlaway Avenue","Velkovich","Tom",,"Sharon","(630) 778-0017",
 1005,"Whirlaway Avenue","Stiegel","Eric",,"Nancy","(630) 579-0687","Sydney '00, Regan '02"
 1006,"Whirlaway Avenue","Miller","Bud",,"Molly","(630) 416-9882","Steven '66, Michelle '69, Michael '97, Joshua '01"
 1010,"Whirlaway Avenue","Huie","Nick",,"Dee","(630) 420-1814",
-1014,"Whirlaway Avenue","Alania","Larry",,"Gayle","(630) 961-9386","Bethany '86"
+1014,"Whirlaway Avenue",,,,,,
 1018,"Whirlaway Avenue","Smith","Jerry",,"Ellen","(630) 961-9439",
 1021,"Whirlaway Avenue","Lipe","Dale",,"Barbara","(630) 983-1347",
 1022,"Whirlaway Avenue","Edwards","Tom",,"Sheila","(630) 717-6984","Tommy '97, Bridget '01, Claire '03"
@@ -282,19 +282,19 @@
 1029,"Whirlaway Avenue","Greiner","Brian",,"Ashley","(847) 366-9017",
 1030,"Whirlaway Avenue","Patton","Mike",,"Lynn","(630) 355-4483","Danny '95, Kelly '98"
 1034,"Whirlaway Avenue","Treacy","Carroll",,"Maria","(630) 420-7181",
-1035,"Whirlaway Avenue","Demarzo","David",,"Brigette","(630) 835-9578",
+1035,"Whirlaway Avenue","DeMarzo","Dave",,"Brigette","(630) 835-9578",
 1038,"Whirlaway Avenue","Storm","Sue",,,"(630) 420-1334",
-1039,"Whirlaway Avenue","Han","Sang","Noh","Sung",,
+1039,"Whirlaway Avenue",,,,,,
 1043,"Whirlaway Avenue","Devaney","Joseph",,"Mary Ellen","(630) 961-2547",
-1047,"Whirlaway Avenue","Zborowski","Wieslaw",,"Anna",,
+1047,"Whirlaway Avenue","Zborowski","Wieslaw",,"Anna","(773) 701-3003","Nathan and Nell '15"
 1051,"Whirlaway Avenue","Freier","James",,"Victoria","(630) 527-0008","Tiffany '85, Danielle '88, Paul '90, Tommy '01"
-1054,"Whirlaway Avenue","Meyer","John",,"Laurie","(630) 357-0847","Justin '90, Morgan '92, Samantha '97"
+1054,"Whirlaway Avenue",,,,,,
 1056,"Whirlaway Avenue","Lueken","Tom",,"Jill","(630) 420-7319",
 1058,"Whirlaway Avenue","Upham","Raymond",,"Althea","(630) 983-0093",
 1061,"Whirlaway Avenue","Cole","Joshua",,"Lynn","(630) 210-8398","Evie '10, Samuel '12"
 1062,"Whirlaway Avenue","Turek","Gene",,"Judy","(630) 961-0242","Michelle '74"
 1067,"Whirlaway Avenue","Donegan","Rick",,"Amanda","(630) 416-9548","Matthew '08, Evan '10"
-1070,"Whirlaway Avenue","Stowell","Fred",,"Mary Ann","(630) 983-6058","Anna '84, Danny '87"
+1070,"Whirlaway Avenue",,,,,,
 1073,"Whirlaway Avenue","Werner","Chuck",,"Monika","(630) 420-7004",
 1074,"Whirlaway Avenue","Swedlund","Jon",,"Kris","(630) 983-1455",
 1077,"Whirlaway Avenue","Wachowski","Dan",,"Pam","(630) 355-2545","Danny '92, Gina '95"
@@ -319,11 +319,11 @@
 1135,"Whirlaway Avenue","Luperini","Perry",,"Susan","(630) 983-8846","Adam '81, Dean '86"
 1139,"Whirlaway Avenue","Thomas","Stephen",,"Celia","(630) 416-0493","Katherine '82, Marie '85"
 1140,"Whirlaway Avenue","Bellcourt","Tim",,"Jeannette","(630) 420-0475",
-1143,"Whirlaway Avenue","Fiorini","Tim",,"Marilyn",,"Alec '94, Andrea '97"
+1143,"Whirlaway Avenue",,,,,,
 1144,"Whirlaway Avenue","Keating","Dave",,"Carol","(630) 420-0649",
 1147,"Whirlaway Avenue","Perona","Tony",,"Kim","(630) 420-0102","Jacob '00, Tori '04"
 1148,"Whirlaway Avenue","Pogorski","David",,"Marian","(630) 369-3955","Christopher '87, David '88"
 1152,"Whirlaway Avenue","Pugliese","Richard",,"Dee","(630) 420-2196","Sharon '81"
 1217,"Whirlaway Avenue","Shah","Shashikant",,"Shobha","(630) 983-1410","Pete '73, Priti '82"
-1221,"Whirlaway Avenue","Lemonds","Jeffrey","Llobet","Alexandra","(704) 608-7792","Arya '12, Lucas '15"
+1221,"Whirlaway Avenue","Lemonds","Jeff","Llobet","Alexandra","(704) 608-7792","Arya '12, Lucas '15"
 1229,"Whirlaway Avenue","Sprovier","Jack",,"Loretta","(630) 420-1826",
