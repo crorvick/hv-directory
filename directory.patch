@@ -1,0 +1,46 @@
+diff --git a/directory.tex b/directory.tex
+index eda01d8..2c7fbc2 100644
+--- a/directory.tex
++++ b/directory.tex
+@@ -166,6 +166,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Domek, Joseph \& Kristine\dotfill1139\ &Chateaugay Ave\dotfill&(630) 983-0486\cr
+ \+Donegan, Rick \& Amanda\dotfill1140\ &Venetian Ct\dotfill&(630) 416-9548\cr
+ \+Doran, Pat \& Therese\dotfill1078\ &Whirlaway Ave\dotfill&(630) 527-8252\cr
++\break
+ \+Doyle, Sean \& Colleen\dotfill1110\ &E Gartner Rd\dotfill&(708) 431-0398\cr
+ \+Drogosz, Donald \& Liz\dotfill1136\ &Chateaugay Ave\dotfill&(630) 848-0230\cr
+ \mybigskip
+@@ -180,7 +181,7 @@ questions regarding the Hobson Village Community Association to:
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+ \+Fales, Peter \& Lorenz, Diana\dotfill1085\ &Whirlaway Ave\dotfill&(630) 357-4769\cr
+-\+Farnaus--Rothermel, Adrienne--Rae \& Rothermel, Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Farnaus--Rothermel, Adrienne--Rae \& Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Farrell, John \& Pat\dotfill1123\ &Whirlaway Ave\dotfill&(630) 420-7042\cr
+ \+Farrington, Bob \& Ann\dotfill1085\ &E Gartner Rd\dotfill&(630) 355-2382\cr
+ \+Fealko, Jeffrey \& Keller, Susanne\dotfill1143\ &Blue Larkspur Ln\dotfill&(630) 428-2573\cr
+@@ -259,6 +260,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Kolev, Tzvetan "TJ" \& Koleva, Bogdanka\dotfill1141\ &Secretariat Dr\dotfill&(630) 548-2791\cr
+ \+Koleva, Bogdanka \& Kolev, Tzvetan "TJ"\dotfill1141\ &Secretariat Dr\dotfill&(630) 548-2791\cr
+ \+Kottis, Nick \& Linda\dotfill716\ &Chateaugay Ave\dotfill&(630) 369-4328\cr
++\break
+ \+Krashen, Bob \& Carol\dotfill1129\ &Omaha Ct\dotfill&(630) 369-2399\cr
+ \+Kwon, Christopher \& Abigail\dotfill917\ &Canonero Dr\dotfill&(630) 486-8088\cr
+ \mybigskip
+@@ -370,7 +372,7 @@ questions regarding the Hobson Village Community Association to:
+ \+Rosas, Monica \& Williams, Douglas\dotfill1224\ &Iron Liege Ct\dotfill&(630) 886-7306\cr
+ \+Rose, Mark \& Nicole\dotfill1130\ &Blue Larkspur Ln\dotfill&Unlisted\cr
+ \+Rossi, Nicole \& Sandilands, Chris \dotfill1118\ &E Gartner Rd\dotfill&(630) 465-3232\cr
+-\+Rothermel, Scott \& Farnaus--Rothermel, Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Rothermel, Scott \& Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Russell, Jim \& Kelly\dotfill823\ &S Charles Ave\dotfill&(630) 718-1003\cr
+ \+Ryan, Jack \& Sandy\dotfill1204\ &Needles Ct\dotfill&(630) 362-4000\cr
+ \+Ryan, Philip\dotfill1135\ &Blue Larkspur Ln\dotfill&(630) 961-0395\cr
+@@ -977,5 +979,7 @@ questions regarding the Hobson Village Community Association to:
+ \setbox\topins=\vbox{\vskip0pt}
+ \output{\plainoutput}
+ \centerline{\ptmblg N\ptmbmd OTES}
++\break
++\centerline{\ptmblg N\ptmbmd OTES}
+ 
+ \end
