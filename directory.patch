@@ -1,0 +1,52 @@
+--- directory-orig.tex	2021-10-04 20:27:59.816572202 -0500
++++ directory.tex	2021-10-04 20:29:04.066909953 -0500
+@@ -166,6 +166,7 @@
+ \+Donegan, Rick \& Amanda\dotfill1140\ &Venetian Ct\dotfill&(630) 416-9548\cr
+ \+Doran, Pat \& Therese\dotfill1078\ &Whirlaway Ave\dotfill&(630) 527-8252\cr
+ \+Doyle, Sean \& Colleen\dotfill1110\ &E Gartner Rd\dotfill&(708) 431-0398\cr
++\break
+ \+Doyle, Steven \& Bridget\dotfill1122\ &S Charles Ave\dotfill&(847) 345-8819\cr
+ \+Drogosz, Donald \& Liz\dotfill1136\ &Chateaugay Ave\dotfill&(630) 848-0230\cr
+ \mybigskip
+@@ -180,7 +181,7 @@
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+ \+Fales, Peter \& Lorenz, Diana\dotfill1085\ &Whirlaway Ave\dotfill&(630) 357-4769\cr
+-\+Farnaus--Rothermel, Adrienne--Rae \& Rothermel, Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Farnaus--Rothermel, Adrienne--Rae \& Scott\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Farrell, John \& Pat\dotfill1123\ &Whirlaway Ave\dotfill&(630) 420-7042\cr
+ \+Farrington, Bob \& Ann\dotfill1085\ &E Gartner Rd\dotfill&(630) 355-2382\cr
+ \+Fealko, Jeffrey \& Keller, Susanne\dotfill1143\ &Blue Larkspur Ln\dotfill&(630) 428-2573\cr
+@@ -257,6 +258,7 @@
+ \+Jungel, David \& Harriett\dotfill1205\ &Chateaugay Ave\dotfill&(630) 961-5886\cr
+ \+Jurek, Rich \& Marsha\dotfill916\ &Jaipur Ave\dotfill&(630) 548-0810\cr
+ \mybigskip
++\break
+ \centerline{\ptmbsm-- K --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+@@ -378,7 +380,7 @@
+ \+Rosas, Monica \& Williams, Douglas\dotfill1224\ &Iron Liege Ct\dotfill&(630) 886-7306\cr
+ \+Rose, Mark \& Nicole\dotfill1130\ &Blue Larkspur Ln\dotfill&Unlisted\cr
+ \+Rossi--Sandilands, Nicole \& Sandilands, Chris\dotfill1118\ &E Gartner Rd\dotfill&(630) 465-3232\cr
+-\+Rothermel, Scott \& Farnaus--Rothermel, Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
++\+Rothermel, Scott \& Adrienne--Rae\dotfill911\ &Tim Tam Cir\dotfill&(630) 369-4672\cr
+ \+Russell, Jim \& Kelly\dotfill823\ &S Charles Ave\dotfill&(630) 718-1003\cr
+ \+Ryan, Jack \& Sandy\dotfill1204\ &Needles Ct\dotfill&(630) 362-4000\cr
+ \+Ryan, Philip\dotfill1135\ &Blue Larkspur Ln\dotfill&(630) 961-0395\cr
+@@ -444,6 +446,7 @@
+ \+Tierney, David \& Donna\dotfill928\ &Jaipur Ave\dotfill&(630) 961-2769\cr
+ \+Tomoiaga, Daniel \& Marina\dotfill1132\ &Chateaugay Ave\dotfill&(773) 814-1351\cr
+ \+Treacy, Carroll \& Maria\dotfill1034\ &Whirlaway Ave\dotfill&(630) 420-7181\cr
++\break
+ \+Trezona, Richard \& Jennifer\dotfill1002\ &S Charles Ave\dotfill&(630) 717-0233\cr
+ \+Turek, Gene \& Judy\dotfill1062\ &Whirlaway Ave\dotfill&(630) 961-0242\cr
+ \mybigskip
+@@ -489,6 +492,7 @@
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
+ \+Xu, Mindi \& Zheng, Ning\dotfill1082\ &Challdon Ct\dotfill&Unlisted\cr
+ \mybigskip
++\break
+ \centerline{\ptmbsm-- Y --}\nobreak
+ \smallskip
+ \settabs\+\hskip\dimen100&\hskip\wd100&\hskip\wd101\cr
