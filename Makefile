@@ -18,7 +18,7 @@ directory-no-blanks.dvi: directory.dvi
 
 directory_for_printer.pdf: directory_for_printer.ps
 	ps2pdf $< directory_for_printer_content.pdf
-	pdf270 map.pdf
+	pdftk map.pdf cat 1-endwest output map-rotated270.pdf
 	pdfunite directory_for_printer_content.pdf map-rotated270.pdf $@
 	rm directory_for_printer_content.pdf map-rotated270.pdf
 
